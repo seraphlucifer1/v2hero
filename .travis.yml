@@ -5,6 +5,6 @@ services:
   - docker
  
 before_install:
-  - docker build -t "$HEROKU_APPNAME".herokuapp.com.
+  - docker build -t "$HEROKU_APPNAME".registry.heroku.com/ .
   - docker login -u "$HEROKU_EMAIL" -p "$HEROKU_APIKEY" registry.heroku.com
   - docker push registry.heroku.com/"$HEROKU_APPNAME"/web
